@@ -58,11 +58,15 @@ def create_printer():
 
     # USB by vendor:product ID
     if device.startswith("USB:"):
-        # Format: USB:vendor_id:product_id (hex)
-        # e.g., USB:0x04b8:0x0202
+        # Format: USB:vendor_id:product_id[:out_ep:in_ep] (hex)
+        # e.g., USB:0x04b8:0x0202 or USB:0x154f:0x154f:0x02:0x82
         parts = device.split(":")
         vendor_id = int(parts[1], 16)
         product_id = int(parts[2], 16)
+        if len(parts) >= 5:
+            out_ep = int(parts[3], 16)
+            in_ep = int(parts[4], 16)
+            return Usb(vendor_id, product_id, out_ep=out_ep, in_ep=in_ep)
         return Usb(vendor_id, product_id)
 
     # File-based (Linux /dev/usb/lp0, serial COM port, Windows share)
