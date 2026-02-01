@@ -1,10 +1,12 @@
 [project]
-name = "priont"
+name = "epos-proxy"
 version = "0.1.0"
-description = "Add your description here"
+description = "Epson ePOS Printer Proxy - receive ePOS requests and print to thermal printers"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
-    "pillow>=12.1.0",
     "python-escpos>=3.1",
 ]
+
+[project.scripts]
+epos-proxy = "epos_proxy.cli:main"
