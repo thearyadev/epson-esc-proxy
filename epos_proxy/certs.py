@@ -4,7 +4,7 @@ import os
 import socket
 import subprocess
 
-from .config import CERT_FILE, DEFAULT_HOST, KEY_FILE, config
+from epos_proxy.config import CERT_FILE, DEFAULT_HOST, KEY_FILE, config
 
 
 def generate_self_signed_cert() -> bool:

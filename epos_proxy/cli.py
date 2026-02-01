@@ -2,8 +2,8 @@
 
 import argparse
 
-from .config import DEFAULT_HOST, DEFAULT_PORT, DEFAULT_RECEIPT_WIDTH, config
-from .server import run_server
+from epos_proxy.config import DEFAULT_HOST, DEFAULT_PORT, DEFAULT_RECEIPT_WIDTH, config
+from epos_proxy.server import run_server
 
 
 def main():

@@ -6,15 +6,15 @@ import re
 import ssl
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-from .certs import generate_self_signed_cert
-from .config import (
+from epos_proxy.certs import generate_self_signed_cert
+from epos_proxy.config import (
     CERT_FILE,
     DEFAULT_PRINTER_DEVICE,
     DEFAULT_RECEIPT_WIDTH,
     KEY_FILE,
     config,
 )
-from .printer import kick_drawer, print_receipt
+from epos_proxy.printer import kick_drawer, print_receipt
 
 
 class PrinterProxy(BaseHTTPRequestHandler):

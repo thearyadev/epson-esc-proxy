@@ -8,7 +8,7 @@ from functools import wraps
 
 from escpos.printer import File, Network, Usb
 
-from .config import (
+from epos_proxy.config import (
     DEFAULT_PRINTER_DEVICE,
     DEFAULT_RECEIPT_WIDTH,
     MAX_RETRIES,
